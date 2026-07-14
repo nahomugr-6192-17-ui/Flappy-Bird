@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class logicScript : MonoBehaviour
 {
@@ -11,9 +12,16 @@ public class logicScript : MonoBehaviour
     public void addScore()
     {
         scoreCounter += 1;
-        scoreText.text = scoreCounter.ToString();
+        scoreText.text = scoreCounter.ToString("0");
     }
 
+    public void Update()
+    {
+        if (Keyboard.current.enterKey.wasPressedThisFrame)
+        {
+            restartGame();
+        }
+    }
     public void restartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
