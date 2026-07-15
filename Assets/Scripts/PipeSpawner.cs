@@ -7,15 +7,14 @@ public class PipeSpawner : MonoBehaviour
     public float spawnTime = 2;
     private float timer = 0;
     public float heightOffset = 10f;
-
-    void Start()
-    {
-        PipeSpawn();
-    }
+    public logicScript logic;
 
     // Update is called once per frame
     void Update()
     {
+        if (!logic.hasGameStarted)
+            return;
+
 
         if (timer < spawnTime)
         {
@@ -32,6 +31,6 @@ public class PipeSpawner : MonoBehaviour
     {
         float lowestPoint = transform.position.y - heightOffset;
         float upperPoint = transform.position.y + heightOffset;
-        Instantiate(pipe, new (transform.position.x, Random.Range(lowestPoint, upperPoint), 0), transform.rotation);
+        Instantiate(pipe, new(transform.position.x, Random.Range(lowestPoint, upperPoint), 0), transform.rotation);
     }
 }
