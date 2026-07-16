@@ -31,6 +31,11 @@ public class playerMovement : MonoBehaviour
                 audioSource.PlayOneShot(jumpSound);
             }
         }
+        if (rb.transform.position.y < -27f || rb.transform.position.y > 27f)
+        {
+            logic.gameOver();
+            birdIsAlive = false;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -982,7 +982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   pipe: {fileID: 6400250722339753232, guid: 6def42110804d714c9cb0185d5376094, type: 3}
-  spawnTime: 2.2
+  spawnTime: 1.5
   heightOffset: 10
   logic: {fileID: 1647567496}
 --- !u!1 &1123600415
